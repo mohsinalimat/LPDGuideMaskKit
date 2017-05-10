@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LPDGuideMaskKit_Example' do
+  pod 'LPDGuideMaskKit', :path => '../'
+
+  target 'LPDGuideMaskKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
