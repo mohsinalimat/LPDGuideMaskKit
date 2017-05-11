@@ -44,7 +44,7 @@
   
   [self.view layoutIfNeeded];
   
-  [self show:nil];
+//  [self show:nil];
 }
 
 - (IBAction)show:(id)sender {

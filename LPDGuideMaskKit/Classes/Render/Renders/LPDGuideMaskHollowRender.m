@@ -13,7 +13,7 @@
 -(void) render {
   UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.canvas.frame];
   
-  [path appendPath:[UIBezierPath bezierPathWithRect:CGRectMake(self.item.center.x-self.item.size.width/2.0, self.item.center.y-self.item.size.height/2.0, self.item.size.width, self.item.size.height)]];
+  [path appendPath:[[UIBezierPath bezierPathWithRect:CGRectMake(self.item.center.x-self.item.size.width/2.0, self.item.center.y-self.item.size.height/2.0, self.item.size.width, self.item.size.height)] bezierPathByReversingPath]];
   
   CAShapeLayer *shapeLayer = [CAShapeLayer layer];
   shapeLayer.path = path.CGPath;
