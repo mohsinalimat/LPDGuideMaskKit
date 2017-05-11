@@ -1,0 +1,6 @@
+framework module LPDGuideMaskKit {
+  umbrella header "LPDGuideMaskKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

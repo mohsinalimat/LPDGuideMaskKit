@@ -1,0 +1,16 @@
+PODS:
+  - LPDGuideMaskKit (0.1.0)
+
+DEPENDENCIES:
+  - LPDGuideMaskKit (from `../`)
+
+EXTERNAL SOURCES:
+  LPDGuideMaskKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LPDGuideMaskKit: 557fd4117256cc437e60a2430780d0cdd9efc330
+
+PODFILE CHECKSUM: ddee0418237face03a27f5641688b82ec7fe36bf
+
+COCOAPODS: 1.2.1
