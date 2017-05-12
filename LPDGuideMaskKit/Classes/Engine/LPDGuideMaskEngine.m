@@ -11,7 +11,6 @@
 
 @interface LPDGuideMaskEngine()
 
-@property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) NSMutableArray<LPDGuideMaskCanvas *> *canvases;
 
 @end
@@ -20,32 +19,23 @@
 
 - (instancetype) initWithItems:(NSMutableArray<NSMutableArray<id<LPDGuideMaskItemProtocol>> *> *)items {
   if (self = [super init]) {
-    
     [self renderWithItems:items];
-    
   }
   
   return self;
 }
 
-- (UIWindow *)window {
-  if (!_window) {
-    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [[UIViewController alloc] init];
-    [_window makeKeyAndVisible];
-  }
-  return _window;
-}
-
 - (void) renderWithItems:(NSMutableArray<NSMutableArray<id<LPDGuideMaskItemProtocol>> *> *)items {
   
-  UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.window.bounds];
+  UIWindow *window = [UIApplication sharedApplication].delegate.window;
+  
+  UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:window.bounds];
   scrollView.pagingEnabled = YES;
   scrollView.scrollEnabled = NO;
   scrollView.showsHorizontalScrollIndicator = NO;
   scrollView.showsVerticalScrollIndicator = NO;
   
-  [self.window addSubview:scrollView];
+  [window addSubview:scrollView];
   
   NSUInteger canvasIndex = 0;
   
@@ -60,8 +50,7 @@
       [scrollView setContentOffset:CGPointMake((index+1)*[UIScreen mainScreen].bounds.size.width, 0) animated:NO];
       
       if (index == items.count-1) {
-        [self.window resignKeyWindow];
-        self.window = nil;
+        [scrollView removeFromSuperview];
       }
     };
     

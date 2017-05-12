@@ -44,7 +44,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vac-pZ-7Jn">
-                                <rect key="frame" x="168" y="318.5" width="38" height="30"/>
+                                <rect key="frame" x="157" y="313.5" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gpa-M7-aIc"/>
+                                    <constraint firstAttribute="width" constant="60" id="h5X-2j-RD2"/>
+                                </constraints>
                                 <state key="normal" title="Show"/>
                                 <connections>
                                     <action selector="show:" destination="dhU-Bh-IbQ" eventType="touchUpInside" id="r8u-QX-OQQ"/>
@@ -69,6 +73,7 @@
                         <outlet property="guideOne" destination="EDG-sH-Oki" id="P2Y-f0-SNg"/>
                         <outlet property="guideThree" destination="e5j-5j-6qC" id="qLN-Y6-I4K"/>
                         <outlet property="guideTwo" destination="lLu-Nd-xlB" id="NGE-be-9vN"/>
+                        <outlet property="showButton" destination="Vac-pZ-7Jn" id="FqU-zW-8TT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLB-XC-Me3" userLabel="First Responder" sceneMemberID="firstResponder"/>

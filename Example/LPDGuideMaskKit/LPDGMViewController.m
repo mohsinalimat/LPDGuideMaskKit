@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIView *guideTwo;
 @property (weak, nonatomic) IBOutlet UIView *guideThree;
 
+@property (weak, nonatomic) IBOutlet UIButton *showButton;
+
 @end
 
 @implementation LPDGMViewController
@@ -55,6 +57,7 @@
                         ];
   
   NSArray<id<LPDGuideMaskItemProtocol>> *guideTwo = @[
+                        [[LPDGuideMaskHollowItem alloc] initWithCenter:self.showButton.center size:self.showButton.bounds.size],                              
                         [[LPDGuideMaskHollowItem alloc] initWithCenter:self.guideTwo.center size:self.guideTwo.bounds.size],
                         [[LPDGuideMaskTipsItem alloc] initWithImage:[UIImage imageNamed:@"image_transferorder_guide3"] center:CGPointMake([UIScreen mainScreen].bounds.size.width/2.0, [UIScreen mainScreen].bounds.size.height-(120+(200/2))) size:CGSizeMake(320, 200)],
                         [[LPDGuideMaskButtonItem alloc] initWithView:[self nextWithTitle:@"下一步"] center:CGPointMake([UIScreen mainScreen].bounds.size.width/2.0, [UIScreen mainScreen].bounds.size.height-(142+20)) size:CGSizeMake(100, 40)]
