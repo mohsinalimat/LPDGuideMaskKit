@@ -27,12 +27,17 @@
 }
 
 - (void) setItems:(NSMutableArray<NSMutableArray<id<LPDGuideMaskItemProtocol>> *> *)items withKey:(NSString *)key{
-  BOOL alreadShowed = [[NSUserDefaults standardUserDefaults] boolForKey:key];
   
-  if (!alreadShowed) {
+  if (!key || [@"" isEqualToString:key]) {
     _engine = [[LPDGuideMaskEngine alloc] initWithItems:items];
+  } else {
+    BOOL alreadShowed = [[NSUserDefaults standardUserDefaults] boolForKey:key];
     
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
+    if (!alreadShowed) {
+      _engine = [[LPDGuideMaskEngine alloc] initWithItems:items];
+      
+      [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
+    }
   }
 }
 
