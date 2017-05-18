@@ -69,7 +69,7 @@
                           [[LPDGuideMaskButtonItem alloc] initWithView:[self nextWithTitle:@"开始转单"] center:CGPointMake([UIScreen mainScreen].bounds.size.width/2.0, [UIScreen mainScreen].bounds.size.height-(142+20)) size:CGSizeMake(100, 40)]
                           ];
   
-  [[LPDGuideMaskKit shared] setItems:@[guideOne, guideTwo, guideThree]];
+  [[LPDGuideMaskKit shared] setItems:@[guideOne, guideTwo, guideThree] withKey:@"LPDGMViewController"];
 }
 - (void)didReceiveMemoryWarning
 {

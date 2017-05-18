@@ -13,6 +13,6 @@
 
 + (instancetype)shared;
 
-- (void) setItems:(NSMutableArray<NSMutableArray<id<LPDGuideMaskItemProtocol>> *> *)items;
+- (void) setItems:(NSMutableArray<NSMutableArray<id<LPDGuideMaskItemProtocol>> *> *)items withKey:(NSString *)key;
 
 @end

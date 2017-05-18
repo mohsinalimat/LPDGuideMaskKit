@@ -26,8 +26,14 @@
   return shared;
 }
 
-- (void) setItems:(NSMutableArray<NSMutableArray<id<LPDGuideMaskItemProtocol>> *> *)items {
+- (void) setItems:(NSMutableArray<NSMutableArray<id<LPDGuideMaskItemProtocol>> *> *)items withKey:(NSString *)key{
+  BOOL alreadShowed = [[NSUserDefaults standardUserDefaults] boolForKey:key];
+  
+  if (!alreadShowed) {
     _engine = [[LPDGuideMaskEngine alloc] initWithItems:items];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
+  }
 }
 
 @end
